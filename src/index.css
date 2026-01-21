@@ -64,6 +64,11 @@ html {
   width: 100%;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--cream-white);
@@ -73,11 +78,24 @@ body {
   width: 100%;
   position: relative;
   font-weight: 400;
-  /* Increased weight */
-  -webkit-font-smoothing: subpixel-antialiased;
-  /* Better text rendering performance */
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   max-width: 100vw;
+  backface-visibility: hidden;
+}
+
+/* GPU Stabilization */
+.glass,
+.section,
+.card,
+.glass-panel {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.section {
+  contain: layout paint;
 }
 
 /* Performance Optimization Utilities */
