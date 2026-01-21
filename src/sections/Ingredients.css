@@ -36,8 +36,6 @@
     border: none;
     box-shadow: none;
     padding: 0;
-    overflow: hidden;
-    contain: layout paint;
 }
 
 .slider-container {
@@ -48,6 +46,7 @@
     justify-content: center;
     overflow: hidden;
     /* Safety clipping */
+    contain: layout paint;
 }
 
 .slider-image {
