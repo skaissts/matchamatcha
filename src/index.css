@@ -166,20 +166,21 @@ p {
   /* Fallback */
   text-shadow: 0 2px 4px rgba(90, 122, 74, 0.1);
 
+  /* Fallback */
+  text-shadow: 0 2px 4px rgba(90, 122, 74, 0.1);
+
   position: relative;
   z-index: 10;
-  animation: rare-shimmer 10s ease-in-out infinite;
+  animation: rare-shimmer 15s linear infinite;
 }
 
 @keyframes rare-shimmer {
-
-  0%,
-  85% {
-    background-position: 100% 0;
+  0% {
+    background-position: 150% 0;
   }
 
   100% {
-    background-position: 0% 0;
+    background-position: -50% 0;
   }
 }
 
@@ -275,8 +276,7 @@ p {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  will-change: transform;
-  /* Hint to browser */
+  /* Removed will-change to prevent flickering */
 }
 
 .canvas-container.interactive {

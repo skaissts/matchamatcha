@@ -40,18 +40,21 @@ function Ingredients() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.from('.ingredient-item', {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 70%',
-                    toggleActions: 'play none none reverse',
-                },
-                x: 40,
-                opacity: 0,
-                stagger: 0.12,
-                duration: 0.7,
-                ease: 'power2.out',
-            });
+            gsap.fromTo('.ingredient-item',
+                { x: 40, opacity: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 70%',
+                        toggleActions: 'play none none reverse',
+                    },
+                    x: 0,
+                    opacity: 1,
+                    stagger: 0.12,
+                    duration: 0.7,
+                    ease: 'power2.out',
+                }
+            );
 
             gsap.from('.ingredient-line', {
                 scrollTrigger: {
