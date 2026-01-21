@@ -74,8 +74,6 @@ function Ingredients() {
 
     return (
         <section ref={sectionRef} className="section section--ingredients" id="ingredients">
-            <div className="section__glow section__glow--center-left section__glow--green"></div>
-            <div className="section__glow section__glow--center-right section__glow--pink"></div>
             <h2 className="section-title">{t.title}</h2>
 
             <div className="ingredients__container">
@@ -92,6 +90,8 @@ function Ingredients() {
                                 src={`/${sliderImages[currentSlide]}`}
                                 alt="Matcha Variation"
                                 className="slider-image"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </div>
                     </div>

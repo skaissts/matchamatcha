@@ -8,6 +8,9 @@
     justify-content: center;
     overflow: hidden;
     padding: var(--space-lg);
+    contain: layout paint;
+    /* Safari Isolation Fix */
+    isolation: isolate;
 }
 
 .hero__logo-container {
@@ -85,6 +88,7 @@
     text-align: center;
     opacity: 0;
     white-space: nowrap;
+    animation: elegant-float 6s ease-in-out infinite;
 }
 
 /* Scroll hint removed */

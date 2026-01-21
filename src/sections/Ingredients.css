@@ -36,6 +36,8 @@
     border: none;
     box-shadow: none;
     padding: 0;
+    overflow: hidden;
+    contain: layout paint;
 }
 
 .slider-container {
@@ -49,8 +51,10 @@
 }
 
 .slider-image {
-    width: 100%;
+    display: block;
+    width: auto;
     height: 100%;
+    max-width: 100%;
     object-fit: contain;
     /* CRITICAL: Scale to fit, never crop */
     object-position: center center;
@@ -182,10 +186,8 @@
     /* Bold */
     color: var(--matcha-green);
     margin-bottom: 0.4rem;
-    background: linear-gradient(135deg, var(--matcha-green), var(--matcha-green-light));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    animation: elegant-float 6s ease-in-out infinite;
+    animation-delay: 0.5s;
 }
 
 .ingredient-desc {

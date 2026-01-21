@@ -107,10 +107,8 @@ function App() {
                     <Location />
 
                     <footer className="footer">
-                        <div className="footer__made">
-                            <span className="footer__text">© 2026 MATCHA MATCHA</span>
-                            <span className="footer__divider-line"></span>
-                            <span>Made with 💚 in Kassel</span>
+                        <div className="footer__content">
+                            <span>© 2026 MATCHA MATCHA</span>
                         </div>
                     </footer>
                 </div>

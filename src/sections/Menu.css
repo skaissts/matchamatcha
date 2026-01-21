@@ -81,6 +81,7 @@
     margin-bottom: var(--space-sm);
     padding-bottom: 0.6rem;
     border-bottom: 2px solid var(--soft-pink);
+    animation: elegant-float 6s ease-in-out infinite;
 }
 
 .menu-category__items {

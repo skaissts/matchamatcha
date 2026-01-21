@@ -29,7 +29,6 @@ function Location() {
 
     return (
         <section ref={sectionRef} className="section section--location" id="location">
-            <div className="section__glow section__glow--top-center section__glow--pink"></div>
             <h2 className="section-title">Besuchen Sie uns</h2>
 
             <div className="location__grid">

@@ -32,6 +32,8 @@ function Hero() {
                     src="/logo.png"
                     alt="MATCHA MATCHA"
                     className="hero__logo"
+                    loading="eager"
+                    decoding="async"
                     style={{
                         filter: 'drop-shadow(0 0 40px rgba(245, 209, 216, 0.6))'
                     }}

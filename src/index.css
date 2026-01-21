@@ -82,16 +82,28 @@ body {
   text-rendering: optimizeLegibility;
   max-width: 100vw;
   backface-visibility: hidden;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* GPU Stabilization */
+/* GPU Stabilization - Stop Repaints */
+.section--hero,
+.section--ingredients,
+.ingredients__slider,
 .glass,
 .section,
 .card,
-.glass-panel {
-  will-change: transform;
+.glass-panel,
+.review-card,
+.slider-image,
+.menu__paper {
   transform: translateZ(0);
   backface-visibility: hidden;
+  will-change: transform;
+}
+
+.glass {
+  will-change: opacity;
 }
 
 .section {
@@ -176,34 +188,24 @@ p {
   text-align: center;
   margin-bottom: var(--space-xl);
 
-  /* Glossy Text Effect - Rare Subtle Shimmer */
-  background: linear-gradient(120deg,
-      var(--matcha-green) 45%,
-      rgba(255, 255, 255, 0.4) 50%,
-      var(--matcha-green) 55%);
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--matcha-green);
 
-  /* Fallback */
-  text-shadow: 0 2px 4px rgba(90, 122, 74, 0.1);
-
-  /* Fallback */
-  text-shadow: 0 2px 4px rgba(90, 122, 74, 0.1);
+  text-shadow: 0 4px 15px rgba(90, 122, 74, 0.08);
 
   position: relative;
   z-index: 10;
-  animation: rare-shimmer 15s linear infinite;
+  animation: elegant-float 6s ease-in-out infinite;
 }
 
-@keyframes rare-shimmer {
-  0% {
-    background-position: 150% 0;
+@keyframes elegant-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
 
-  100% {
-    background-position: -50% 0;
+  50% {
+    transform: translateY(-8px);
   }
 }
 
@@ -236,7 +238,7 @@ p {
 
 /* Footer */
 .footer {
-  padding: var(--space-xl) var(--space-md) var(--space-md);
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -249,38 +251,18 @@ p {
   content: '';
   width: 150px;
   height: 1px;
-  background: rgba(90, 122, 74, 0.3);
-  margin-bottom: var(--space-xs);
+  background: rgba(90, 122, 74, 0.2);
+  margin-bottom: var(--space-sm);
 }
 
-.footer__text {
+.footer__content {
   font-family: var(--font-display);
   font-size: 0.9rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--matcha-green-dark);
-  font-weight: 600;
-}
-
-.footer__divider-line {
-  width: 2px;
-  height: 15px;
-  background: var(--matcha-green);
-  opacity: 0.4;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.footer__made {
-  font-family: var(--font-body);
-  font-size: 1rem;
   color: var(--matcha-green);
+  font-weight: 600;
   opacity: 0.8;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
 }
 
 /* Main App Container */

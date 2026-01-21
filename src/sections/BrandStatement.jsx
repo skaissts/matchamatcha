@@ -36,8 +36,6 @@ function BrandStatement() {
 
     return (
         <section ref={sectionRef} className="section section--brand-statement">
-            <div className="section__glow section__glow--top-left section__glow--green"></div>
-            <div className="section__glow section__glow--bottom-right section__glow--pink"></div>
             <div ref={textRef} className="brand-statement__content">
                 {/* Use shared section-title class for consistent size/style */}
                 <h2 className="section-title">
