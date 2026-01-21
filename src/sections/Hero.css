@@ -27,16 +27,28 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60vw;
-    height: 60vw;
-    max-width: 600px;
-    max-height: 600px;
-    background: radial-gradient(circle, rgba(255, 105, 180, 0.5) 0%, rgba(255, 182, 193, 0.2) 40%, transparent 70%);
-    filter: blur(60px);
+    /* Shifted up slightly to avoid bottom cutoff */
+    /* Shifted up slightly to avoid bottom cutoff */
+    transform: translate(-50%, -60%) translateZ(0);
+    width: 55vw;
+    height: 55vw;
+    max-width: 550px;
+    max-height: 550px;
+    /* Static Pink Gradient - Vibrant & Expressive */
+    background: radial-gradient(circle at center,
+            #ff5fa2 0%,
+            #ff2f92 25%,
+            #e6007a 50%,
+            #b0005a 65%,
+            rgba(176, 0, 90, 0) 85%);
+    filter: blur(80px);
+    /* Reduced blur slightly as mask does the heavy lifting */
+    opacity: 0.9;
+    border-radius: 50%;
     z-index: -1;
     pointer-events: none;
-    animation: glow-pulse 4s ease-in-out infinite alternate;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 @keyframes glow-pulse {
@@ -69,7 +81,7 @@
     font-size: clamp(1.1rem, 2.5vw, 1.75rem);
     font-weight: 400;
     letter-spacing: 0.12em;
-    color: var(--matcha-green-dark);
+    color: var(--matcha-green);
     text-align: center;
     opacity: 0;
     white-space: nowrap;

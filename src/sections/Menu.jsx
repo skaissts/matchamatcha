@@ -62,6 +62,8 @@ function Menu() {
 
     return (
         <section ref={sectionRef} className="section section--menu" id="menu">
+            <div className="section__glow section__glow--top-right section__glow--pink"></div>
+            <div className="section__glow section__glow--bottom-left section__glow--green"></div>
             {/* PNG Menu Logo in Glossy Container */}
             <div className="menu__logo-container">
                 <img

@@ -44,6 +44,8 @@ function Reviews() {
 
     return (
         <section ref={sectionRef} className="section section--reviews" id="reviews">
+            <div className="section__glow section__glow--center-right section__glow--pink"></div>
+            <div className="section__glow section__glow--center-left section__glow--green"></div>
             <div className="reviews__content">
                 <h2 className="section-title">{t.title}</h2>
 

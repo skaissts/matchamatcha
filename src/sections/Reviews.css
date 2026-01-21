@@ -75,7 +75,7 @@
     font-family: var(--font-body);
     font-size: 1.125rem;
     font-style: italic;
-    color: var(--matcha-green-dark);
+    color: var(--matcha-green);
     line-height: 1.7;
     margin-bottom: var(--space-md);
     margin-top: var(--space-md);

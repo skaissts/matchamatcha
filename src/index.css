@@ -140,7 +140,7 @@ h6 {
   letter-spacing: -0.02em;
   line-height: 1.1;
   /* Glossy effect default for headers */
-  color: var(--matcha-green-dark);
+  color: var(--matcha-green);
 }
 
 h1 {
@@ -178,9 +178,9 @@ p {
 
   /* Glossy Text Effect - Rare Subtle Shimmer */
   background: linear-gradient(120deg,
-      var(--matcha-green-dark) 45%,
+      var(--matcha-green) 45%,
       rgba(255, 255, 255, 0.4) 50%,
-      var(--matcha-green-dark) 55%);
+      var(--matcha-green) 55%);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;

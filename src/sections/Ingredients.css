@@ -180,9 +180,9 @@
     /* Larger */
     font-weight: 700;
     /* Bold */
-    color: var(--matcha-green-dark);
+    color: var(--matcha-green);
     margin-bottom: 0.4rem;
-    background: linear-gradient(135deg, var(--matcha-green-dark), var(--matcha-green));
+    background: linear-gradient(135deg, var(--matcha-green), var(--matcha-green-light));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
