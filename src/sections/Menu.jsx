@@ -1,65 +1,14 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../App';
+import { translations } from '../i18n/translations';
 import './Menu.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Menu data
-const menuData = {
-    basicIcedMatcha: {
-        title: 'BASIC ICED MATCHA',
-        items: [
-            { name: 'classic', price: '6,2' },
-            { name: 'strawberry', price: '6,9' },
-            { name: 'mango', price: '6,9' },
-            { name: 'blueberry', price: '6,9' },
-        ]
-    },
-    matchaMatcha: {
-        title: 'MATCHA MATCHA',
-        items: [
-            { name: 'banana pudding matcha', price: '7,5' },
-            { name: 'lotus crumble matcha', price: '7,5' },
-        ]
-    },
-    icedHochija: {
-        title: 'ICED HOCHIJA',
-        items: [
-            { name: 'bourbon vanilla hochija', price: '6,9' },
-            { name: 'banana hazel hochija', price: '7,5' },
-            { name: 'chocolaty hochija', price: '6,9' },
-        ]
-    },
-    signatureMatchas: {
-        title: 'SIGNATURE MATCHAS',
-        items: [
-            { name: 'white choc raspberry', price: '6,9' },
-            { name: 'raspberry / vanilla pistachio', price: '7,5' },
-            { name: 'nutty banana', price: '7,5' },
-            { name: 'pink strawberry glow', price: '6,9' },
-            { name: 'mango / blueberry coco', price: '6,9' },
-            { name: 'geh ins gymi werde skinny!', price: '6,9' },
-        ]
-    },
-    sweetTreats: {
-        title: 'SWEET TREATS',
-        items: [
-            { name: 'banana pudding cup', price: '4,9' },
-            { name: 'pistachio banana pudding', price: '5,9' },
-            { name: 'lotus banana pudding', price: '5,9' },
-        ]
-    }
-};
-
-const milkOptions = 'kuhmilch / hafermilch / mandelmilch / sojamilch';
-const milkExtra = 'kokos- und vanillemilch zzgl. 0,5€';
-const extras = [
-    'vanilla / caramel / sugarfree vanilla sirup zzgl. 0,5€',
-    'white choc / coco / hazel / pistachio / chocolate / puree zzgl. 1,0€'
-];
-
 function MenuCategory({ category }) {
+    if (!category) return null;
     return (
         <div className="menu-category">
             <h3 className="menu-category__title">{category.title}</h3>
@@ -77,6 +26,8 @@ function MenuCategory({ category }) {
 }
 
 function Menu() {
+    const { language } = useLanguage();
+    const t = translations[language].menuSection;
     const sectionRef = useRef();
     const logoRef = useRef();
 
@@ -126,31 +77,31 @@ function Menu() {
                 <div className="menu__paper">
                     <div className="menu__grid">
                         <div className="menu__column">
-                            <MenuCategory category={menuData.basicIcedMatcha} />
-                            <MenuCategory category={menuData.matchaMatcha} />
-                            <MenuCategory category={menuData.icedHochija} />
+                            <MenuCategory category={t.items.basicIcedMatcha} />
+                            <MenuCategory category={t.items.matchaMatcha} />
+                            <MenuCategory category={t.items.icedHochija} />
                         </div>
                         <div className="menu__column">
-                            <MenuCategory category={menuData.signatureMatchas} />
-                            <MenuCategory category={menuData.sweetTreats} />
+                            <MenuCategory category={t.items.signatureMatchas} />
+                            <MenuCategory category={t.items.sweetTreats} />
                         </div>
                     </div>
 
                     <div className="menu__extras">
                         <div className="menu__milk">
-                            <h4>choose your milk:</h4>
-                            <p>{milkOptions}</p>
-                            <p className="menu__milk-extra">{milkExtra}</p>
+                            <h4>{t.extras.milkTitle}</h4>
+                            <p>{t.extras.milkOptions}</p>
+                            <p className="menu__milk-extra">{t.extras.milkExtra}</p>
                         </div>
                         <div className="menu__add-ons">
-                            <h4>extras:</h4>
-                            {extras.map((extra, i) => (
+                            <h4>{t.extras.extrasTitle}</h4>
+                            {t.extras.extrasList.map((extra, i) => (
                                 <p key={i}>{extra}</p>
                             ))}
                         </div>
                     </div>
 
-                    <p className="menu__note">p.s all our drinks are 550ml</p>
+                    <p className="menu__note">{t.extras.note}</p>
                 </div>
             </div>
         </section>

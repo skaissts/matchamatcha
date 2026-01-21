@@ -91,6 +91,14 @@
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    transition: all var(--duration-fast) var(--ease-out-soft);
+}
+
+.menu-item:hover {
+    background: rgba(90, 122, 74, 0.05);
+    transform: translateX(5px);
 }
 
 .menu-item__name {
@@ -182,5 +190,13 @@
 
     .menu__logo {
         max-width: 300px;
+    }
+
+    /* Ensure scrollability on small screens */
+    .section--menu {
+        padding-bottom: var(--space-2xl);
+        min-height: auto;
+        height: auto;
+        overflow-y: visible;
     }
 }

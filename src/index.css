@@ -153,25 +153,34 @@ p {
   text-align: center;
   margin-bottom: var(--space-xl);
 
-  /* Glossy Text Effect */
-  background: linear-gradient(135deg,
-      #ffffff 0%,
-      var(--matcha-green-dark) 25%,
-      var(--matcha-green) 50%,
-      var(--matcha-green-dark) 75%,
-      #ffffff 100%);
-  background-size: 200% auto;
+  /* Glossy Text Effect - Rare Subtle Shimmer */
+  background: linear-gradient(120deg,
+      var(--matcha-green-dark) 45%,
+      rgba(255, 255, 255, 0.4) 50%,
+      var(--matcha-green-dark) 55%);
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 
   /* Fallback */
-  text-shadow: 2px 10px 20px rgba(90, 122, 74, 0.15);
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+  text-shadow: 0 2px 4px rgba(90, 122, 74, 0.1);
 
   position: relative;
   z-index: 10;
-  animation: shine 8s linear infinite;
+  animation: rare-shimmer 10s ease-in-out infinite;
+}
+
+@keyframes rare-shimmer {
+
+  0%,
+  85% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0% 0;
+  }
 }
 
 @keyframes shine {

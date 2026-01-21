@@ -1,18 +1,15 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../App';
+import { translations } from '../i18n/translations';
 import './Reviews.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Reviews data for Kassel
-const reviewsData = [
-    { text: 'Der beste Matcha Latte in ganz Kassel. Einfach himmlisch!', author: 'Anna M.' },
-    { text: 'Ein Ort der Ruhe mitten in der Stadt. Ich komme jeden Tag.', author: 'Thomas K.' },
-    { text: 'Die Atmosphäre ist einzigartig. Wie eine kleine Oase.', author: 'Sophie L.' },
-];
-
 function Reviews() {
+    const { language } = useLanguage();
+    const t = translations[language].reviews;
     const sectionRef = useRef();
 
     useEffect(() => {
@@ -48,10 +45,10 @@ function Reviews() {
     return (
         <section ref={sectionRef} className="section section--reviews" id="reviews">
             <div className="reviews__content">
-                <h2 className="section-title">Was unsere Gäste sagen</h2>
+                <h2 className="section-title">{t.title}</h2>
 
                 <div className="reviews__grid">
-                    {reviewsData.map((review, index) => (
+                    {t.items.map((review, index) => (
                         <div
                             key={index}
                             className="review-card"

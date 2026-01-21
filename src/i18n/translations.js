@@ -24,6 +24,62 @@ export const translations = {
         },
         menuSection: {
             title: 'Menü',
+            items: {
+                basicIcedMatcha: {
+                    title: 'BASIC ICED MATCHA',
+                    items: [
+                        { name: 'classic', price: '6,2' },
+                        { name: 'strawberry', price: '6,9' },
+                        { name: 'mango', price: '6,9' },
+                        { name: 'blueberry', price: '6,9' },
+                    ]
+                },
+                matchaMatcha: {
+                    title: 'MATCHA MATCHA',
+                    items: [
+                        { name: 'banana pudding matcha', price: '7,5' },
+                        { name: 'lotus crumble matcha', price: '7,5' },
+                    ]
+                },
+                icedHochija: {
+                    title: 'ICED HOCHIJA',
+                    items: [
+                        { name: 'bourbon vanilla hochija', price: '6,9' },
+                        { name: 'banana hazel hochija', price: '7,5' },
+                        { name: 'chocolaty hochija', price: '6,9' },
+                    ]
+                },
+                signatureMatchas: {
+                    title: 'SIGNATURE MATCHAS',
+                    items: [
+                        { name: 'white choc raspberry', price: '6,9' },
+                        { name: 'raspberry / vanilla pistachio', price: '7,5' },
+                        { name: 'nutty banana', price: '7,5' },
+                        { name: 'pink strawberry glow', price: '6,9' },
+                        { name: 'mango / blueberry coco', price: '6,9' },
+                        { name: 'geh ins gymi werde skinny!', price: '6,9' },
+                    ]
+                },
+                sweetTreats: {
+                    title: 'SWEET TREATS',
+                    items: [
+                        { name: 'banana pudding cup', price: '4,9' },
+                        { name: 'pistachio banana pudding', price: '5,9' },
+                        { name: 'lotus banana pudding', price: '5,9' },
+                    ]
+                }
+            },
+            extras: {
+                milkTitle: 'wähle deine milch:',
+                milkOptions: 'kuhmilch / hafermilch / mandelmilch / sojamilch',
+                milkExtra: 'kokos- und vanillemilch zzgl. 0,5€',
+                extrasTitle: 'extras:',
+                extrasList: [
+                    'vanilla / caramel / sugarfree vanilla sirup zzgl. 0,5€',
+                    'white choc / coco / hazel / pistachio / chocolate / puree zzgl. 1,0€'
+                ],
+                note: 'p.s alle unsere getränke sind 550ml'
+            }
         },
         ingredients: {
             title: 'Unsere Zutaten',
@@ -76,6 +132,62 @@ export const translations = {
         },
         menuSection: {
             title: 'Menu',
+            items: {
+                basicIcedMatcha: {
+                    title: 'BASIC ICED MATCHA',
+                    items: [
+                        { name: 'classic', price: '6.2' },
+                        { name: 'strawberry', price: '6.9' },
+                        { name: 'mango', price: '6.9' },
+                        { name: 'blueberry', price: '6.9' },
+                    ]
+                },
+                matchaMatcha: {
+                    title: 'MATCHA MATCHA',
+                    items: [
+                        { name: 'banana pudding matcha', price: '7.5' },
+                        { name: 'lotus crumble matcha', price: '7.5' },
+                    ]
+                },
+                icedHochija: {
+                    title: 'ICED HOCHIJA',
+                    items: [
+                        { name: 'bourbon vanilla hochija', price: '6.9' },
+                        { name: 'banana hazel hochija', price: '7.5' },
+                        { name: 'chocolaty hochija', price: '6.9' },
+                    ]
+                },
+                signatureMatchas: {
+                    title: 'SIGNATURE MATCHAS',
+                    items: [
+                        { name: 'white choc raspberry', price: '6.9' },
+                        { name: 'raspberry / vanilla pistachio', price: '7.5' },
+                        { name: 'nutty banana', price: '7.5' },
+                        { name: 'pink strawberry glow', price: '6.9' },
+                        { name: 'mango / blueberry coco', price: '6.9' },
+                        { name: 'geh ins gymi werde skinny!', price: '6.9' },
+                    ]
+                },
+                sweetTreats: {
+                    title: 'SWEET TREATS',
+                    items: [
+                        { name: 'banana pudding cup', price: '4.9' },
+                        { name: 'pistachio banana pudding', price: '5.9' },
+                        { name: 'lotus banana pudding', price: '5.9' },
+                    ]
+                }
+            },
+            extras: {
+                milkTitle: 'choose your milk:',
+                milkOptions: 'cow / oat / almond / soy milk',
+                milkExtra: 'coconut and vanilla milk +0.5€',
+                extrasTitle: 'extras:',
+                extrasList: [
+                    'vanilla / caramel / sugarfree vanilla syrup +0.5€',
+                    'white choc / coco / hazel / pistachio / chocolate / puree +1.0€'
+                ],
+                note: 'p.s all our drinks are 550ml'
+            }
         },
         ingredients: {
             title: 'Our Ingredients',
