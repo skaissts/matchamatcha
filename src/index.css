@@ -60,6 +60,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -68,11 +70,14 @@ body {
   color: var(--matcha-green-dark);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
   font-weight: 400;
   /* Increased weight */
   -webkit-font-smoothing: subpixel-antialiased;
   /* Better text rendering performance */
   text-rendering: optimizeLegibility;
+  max-width: 100vw;
 }
 
 /* Performance Optimization Utilities */
