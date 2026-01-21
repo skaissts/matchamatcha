@@ -168,35 +168,82 @@
     color: var(--soft-pink-dark);
 }
 
-/* Responsive */
+/* Responsive - STRICT MOBILE FIX */
 @media (max-width: 768px) {
     .menu__grid {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
+        width: 100%;
     }
 
     .menu__extras {
         grid-template-columns: 1fr;
         gap: var(--space-md);
+        width: 100%;
     }
 
     .menu__paper {
-        padding: var(--space-lg);
+        padding: var(--space-md);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .menu__logo-container {
         padding: var(--space-md) var(--space-lg);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .menu__logo {
         max-width: 300px;
+        width: 100%;
     }
 
-    /* Ensure scrollability on small screens */
+    /* CRITICAL MOBILE FIX: PREVENT HORIZONTAL SCROLL */
     .section--menu {
         padding-bottom: var(--space-2xl);
         min-height: auto;
         height: auto;
         overflow-y: visible;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        padding-left: var(--space-sm);
+        padding-right: var(--space-sm);
+    }
+
+    /* STEP 2 — FIX MENU ROWS (Mobile specific override) */
+    .menu-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        /* Align to bottom for dots */
+        width: 100%;
+        max-width: 100%;
+        gap: 0.5rem;
+    }
+
+    .menu-item__name {
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        max-width: 100%;
+    }
+
+    /* Dots must be controllable or hidden if they cause overflow */
+    .menu-item__dots {
+        display: none;
+        /* Safest for mobile if dots cause issues */
+        /* Or if we want to try to keep them: */
+        /* min-width: 0; flex: 1; overflow: hidden; */
+    }
+
+    /* Price alignment */
+    .menu-item__price {
+        white-space: nowrap;
+        text-align: right;
     }
 }

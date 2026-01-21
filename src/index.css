@@ -492,8 +492,16 @@ p {
     --space-xl: 4rem;
   }
 
+  /* STEP 5 — FINAL MOBILE OVERRIDE (NUCLEAR OPTION) */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .section {
     padding: var(--space-md) var(--space-sm);
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .balloon-container {
